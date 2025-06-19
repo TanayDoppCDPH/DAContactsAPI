@@ -3,6 +3,11 @@ import sqlite3
 
 app = Flask(__name__)
 
+
+@app.route("/")
+def home():
+    return "API is working"
+    
 @app.route('/contacts', methods=['GET'])
 def get_contacts():
     con = sqlite3.connect('contact_info.db')
